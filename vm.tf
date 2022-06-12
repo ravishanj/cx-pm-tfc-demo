@@ -159,5 +159,5 @@ resource "vsphere_virtual_machine" "vm" {
   
   output "ip" {
         description = "default ip address of the deployed VM"
-        value       = vsphere_virtual_machine.vm.ip.*.default_ip_address
+        value       = vsphere_virtual_machine.vm.ip[0].*.default_ip_address
     }
