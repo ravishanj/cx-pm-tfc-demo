@@ -155,7 +155,9 @@ resource "vsphere_virtual_machine" "vm" {
       #   # ipv4_gateway = "10.0.0.1"
       # }
     }
-
-
-
 }
+  
+  output "ip" {
+        description = "default ip address of the deployed VM"
+        value       = vsphere_virtual_machine.vm.*.default_ip_address
+    }
